@@ -131,7 +131,7 @@ export default [
     pathname: '/link',
     title: '异次元',
     param: 'url',
-    example: 'https://www.iplaysoft.com/link/?url=https%3A%2F%2Fcocos.com',
+    example: 'https://www.iplaysoft.com/link/?url=Hc0RHan9yL6MWdoRXat92YuI3bod0LF5WZ0N3b0lGZvh2RvIiblR3c5FGbQ1ZXI',
     getTargetUrl: (url) => {
       // https://www.iplaysoft.com/link/?url=Hc0RHan9yL6MWdoRXat92YuI3bod0LF5WZ0N3b0lGZvh2RvIiblR3c5FGbQ1ZXI
       // 该网站将目标地址进行了二次加密，必须请求页面内容并解析出目标地址
@@ -139,7 +139,7 @@ export default [
       return fetch(url)
         .then((res) => res.text())
         .then((text) => {
-          const match = text.match(/<a\s+class="button"\s+rel="noopener noreferrer"\s+href="([^"]+)">继续前往访问<\/a>/i);
+          const match = text.match(/<a\s+class="button"\s+rel="noopener noreferrer"\s+href="([^"]+)">/i);
           if (match && match[1]) {
             return match[1];
           }
