@@ -6,7 +6,7 @@ let isFuzzy = false;
 
 // 核心功能：拦截导航请求并重定向到目标URL
 chrome.webNavigation.onBeforeNavigate.addListener(
-  (details) => {
+  async (details) => {
     try {
       if (/^http/.test(details.url) === false) {
         return;
@@ -27,7 +27,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(
         }
 
         if (typeof site.getTargetUrl === 'function') {
-          targetUrl = site.getTargetUrl(details.url);
+          targetUrl = await site.getTargetUrl(details.url);
         } else {
           targetUrl = getTargetUrl(url.searchParams, site.param, true);
         }

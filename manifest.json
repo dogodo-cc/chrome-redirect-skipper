@@ -1,11 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/chrome-manifest.json",
   "name": "redirect-skipper-development",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A Chrome extension that bypasses redirect warning pages.",
   "homepage_url": "https://github.com/dogodo-cc/redirect-skipper",
   "manifest_version": 3,
   "permissions": ["webNavigation", "tabs", "storage"],
+  "host_permissions": ["https://www.iplaysoft.com/*"],
   "background": {
     "service_worker": "./src/service_worker.js",
     "type": "module"
