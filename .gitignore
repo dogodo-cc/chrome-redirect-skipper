@@ -90,7 +90,11 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+dist-chrome
+dist-firefox
 redirect-skipper.zip
+redirect-skipper-chrome.zip
+redirect-skipper-firefox.zip
 
 # Gatsby files
 .cache/

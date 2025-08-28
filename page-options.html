@@ -10,14 +10,19 @@
         background-color: var(--bg-color);
         color: var(--font-color);
       }
+      summary {
+        cursor: pointer;
+        user-select: none;
+      }
       #sites-list {
-        width: 600px;
+        width: 800px;
         margin: 30px auto;
         display: flex;
         flex-flow: wrap;
+        padding: 0;
 
         & li {
-          width: 300px;
+          width: 33.33%;
           flex-shrink: 0;
           display: flex;
           justify-content: space-between;

@@ -6,9 +6,10 @@
     <title>skipper</title>
     <link rel="stylesheet" href="./src/theme.css" />
     <style>
-      html {
+      body {
         width: 300px;
         background-color: var(--bg-color);
+        padding: 8px;
       }
 
       .setting-bar {
@@ -83,12 +84,7 @@
     <datalist id="target-param-list"></datalist>
 
     <h4 data-i18n="popup_title_targetDomain"></h4>
-    <input
-      id="target-domain"
-      placeholder="i18n:popup_canNotGetTargetUrl"
-      readonly
-      type="text"
-    />
+    <input id="target-domain" placeholder="i18n:popup_canNotGetTargetUrl" readonly type="text" />
 
     <div class="btns">
       <button data-i18n="popup_btn_submit" id="submit"></button>

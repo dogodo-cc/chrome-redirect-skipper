@@ -3,6 +3,11 @@
   "description": "A Chrome extension that bypasses redirect warning pages.",
   "type": "module",
   "scripts": {
-    "build": "node ./scripts/build.js"
+    "build:chrome": "node ./scripts/build.js --chrome",
+    "build:firefox": "node ./scripts/build.js --firefox",
+    "build": "npm run build:chrome && npm run build:firefox"
+  },
+  "devDependencies": {
+    "webextension-polyfill": "^0.12.0"
   }
 }

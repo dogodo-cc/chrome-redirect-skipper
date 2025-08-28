@@ -1,3 +1,4 @@
+import { browser } from './browser-wrap.js';
 import { targetParams, $, i18n, message, generateIssueUrl } from './utils.js';
 import sitesBuiltIn from './sites.js';
 
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   createParamOptions();
 
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+  browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
     if (tabs && tabs[0]) {
       analyzeUrl(tabs[0].url, tabs[0].title);
     }
@@ -46,10 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     updateUserData(data)
       .then(() => {
-        message(chrome.i18n.getMessage('popup_addSuccessTip'), 'info');
+        message(browser.i18n.getMessage('popup_addSuccessTip'), 'info');
       })
       .catch((error) => {
-        message(error.message || chrome.i18n.getMessage('popup_addErrorTip'), 'error');
+        message(error.message || browser.i18n.getMessage('popup_addErrorTip'), 'error');
       })
       .finally(() => {
         btn.isUpdating = false;
@@ -93,7 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
   $settingButton.addEventListener(
     'click',
     () => {
-      window.open(`chrome-extension://${chrome.runtime.id}/page-options.html`);
+      const url = browser.runtime.getURL('page-options.html');
+      window.open(url);
     },
     false
   );
@@ -118,7 +120,7 @@ function updateUserData(data) {
       return reject(new Error('Cannot modify built-in sites'));
     }
 
-    chrome.storage.sync.get('sites', (result) => {
+    browser.storage.sync.get('sites').then((result) => {
       const sites = result.sites || [];
       const existingIndex = sites.findIndex((site) => site.hostname === data.hostname);
 
@@ -130,9 +132,7 @@ function updateUserData(data) {
         sites.push(data);
       }
 
-      chrome.storage.sync.set({ sites }, () => {
-        resolve();
-      });
+      browser.storage.sync.set({ sites }).then(resolve);
     });
   });
 }

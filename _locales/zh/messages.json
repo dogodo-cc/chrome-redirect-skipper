@@ -53,6 +53,6 @@
     "message": "选项解释"
   },
   "options_setting_fuzzy_detailsContent": {
-    "message": "当开启模糊匹配后，如果遇到未被收录的网站且页面地址符合常见的跳转格式(如：https://example.com/hello/?target=xxxx) 也会被直接跳转到 xxx"
+    "message": "当开启模糊匹配后，如果遇到未被收录的网站且页面地址符合常见的跳转格式(如：https://example.com/hello/?[target | link | href | and so on]=xxxx) 也会被直接跳转到 xxx"
   }
 }

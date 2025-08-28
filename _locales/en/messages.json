@@ -53,6 +53,6 @@
     "message": "Details"
   },
   "options_setting_fuzzy_detailsContent": {
-    "message": "When fuzzy matching is enabled, if an unrecognized website is encountered and the page URL matches a common redirect format (such as: https://example.com/hello/?target=xxxx), it will also be redirected directly to xxxx."
+    "message": "When fuzzy matching is enabled, if an unrecognized website is encountered and the page URL matches a common redirect format (such as: https://example.com/hello/?[target | link | href | and so on]=xxxx), it will also be redirected directly to xxxx."
   }
 }
