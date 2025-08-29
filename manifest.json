@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/chrome-manifest.json",
   "name": "redirect-skipper",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A browser extension that bypasses redirect warning pages.",
   "homepage_url": "https://github.com/dogodo-cc/redirect-skipper",
   "manifest_version": 3,

@@ -149,4 +149,38 @@ export default [
     param: 'target',
     example: 'https://www.gcores.com/link?target=https%3A%2F%2Fcocos.com',
   },
+  {
+    hostname: 'urlsec.qq.com',
+    pathname: '/check',
+    title: '腾讯安全中心',
+    param: 'url',
+    example: 'https://urlsec.qq.com/check.html?url=https%3A%2F%2Fwww.example.com',
+  },
+  {
+    hostname: 'seccaptcha.baidu.com',
+    pathname: '/v1/webapi/verint/svcp.html',
+    title: '百度安全验证',
+    param: 'backurl',
+    getTargetUrl: (url) => {
+      const urlObj = new URL(url);
+      const backurl = urlObj.searchParams.get('backurl');
+      if (backurl) {
+        try {
+          const url2 = new URL(backurl);
+          if (url2.hostname === 'bsb.baidu.com') {
+            const s_cap = url2.searchParams.get('s_cap');
+            if (s_cap) {
+              return decodeURIComponent(s_cap);
+            }
+          }
+          return backurl;
+        } catch (e) {
+          return backurl;
+        }
+      }
+      return '';
+    },
+    example:
+      'https://seccaptcha.baidu.com/v1/webapi/verint/svcp.html?ak=lBdQoPALalwAmGSRgKmMzI7cEErgRFZK&backurl=https%3A%2F%2Fbsb.baidu.com%2Fdiagnosis%3Fs_cap%3Dhttps%253A%2F%2Fwww.example.com&ctype=p_spin&ts=1756448493&sign=6e1e4436c160be7d3cf354f4d06e7397',
+  },
 ];

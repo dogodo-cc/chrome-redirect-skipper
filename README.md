@@ -15,8 +15,8 @@
     <a href="https://chromewebstore.google.com/detail/redirect-skipper/bcjldhihfjnhgmkmdeojigknladnbcek?authuser=0&hl=zh-CN" target="_blank">
     <img src="./screenshots/chrome.png" width="16" /> Chrome 商店安装
   </a>
-  <a href="https://github.com/dogodo-cc/redirect-skipper/releases/tag/2.0.0" target="_blank">
-    <img src="./screenshots/edge.png" width="16" /> Edge 商店安装
+  <a href="https://chromewebstore.google.com/detail/redirect-skipper/bcjldhihfjnhgmkmdeojigknladnbcek?authuser=0&hl=zh-CN" target="_blank">
+    <img src="./screenshots/edge.png" width="16" /> Edge 
   </a>
 
 </p>
