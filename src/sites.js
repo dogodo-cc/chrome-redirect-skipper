@@ -183,4 +183,11 @@ export default [
     example:
       'https://seccaptcha.baidu.com/v1/webapi/verint/svcp.html?ak=lBdQoPALalwAmGSRgKmMzI7cEErgRFZK&backurl=https%3A%2F%2Fbsb.baidu.com%2Fdiagnosis%3Fs_cap%3Dhttps%253A%2F%2Fwww.example.com&ctype=p_spin&ts=1756448493&sign=6e1e4436c160be7d3cf354f4d06e7397',
   },
+  {
+    hostname: 'c.pc.qq.com',
+    title: 'QQ 安全中心',
+    param: 'pfurl',
+    example:
+      'https://c.pc.qq.com/middlem.html?pfurl=https%3A%2F%2Fkongdetuo%2Egithub%2Eio%2Fposts%2Favalonia%2Dbinding%2Dto%2Ddatatable%2F&pfuin=2809735321&pfto=qq.msg&type=0&gjlevel=15&gjsublevel=2804&iscontinue=0&ADUIN=2809735321&ADSESSION=1756427704&ADTAG=CLIENT.QQ.5723_AIO.0&ADPUBNO=27456',
+  },
 ];
