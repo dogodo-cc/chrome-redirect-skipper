@@ -59,7 +59,7 @@
 ```mermaid
 flowchart TB
   Start[导航到某个页面]
-  A[onBeforeNavigate]
+  A[tabs.onUpdated]
   B(插件或用户是否有收录当前地址)
   C(是否开启了模糊匹配)
   D(是否可以解析到目标地址)

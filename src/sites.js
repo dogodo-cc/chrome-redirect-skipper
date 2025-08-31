@@ -190,4 +190,11 @@ export default [
     example:
       'https://c.pc.qq.com/middlem.html?pfurl=https%3A%2F%2Fkongdetuo%2Egithub%2Eio%2Fposts%2Favalonia%2Dbinding%2Dto%2Ddatatable%2F&pfuin=2809735321&pfto=qq.msg&type=0&gjlevel=15&gjsublevel=2804&iscontinue=0&ADUIN=2809735321&ADSESSION=1756427704&ADTAG=CLIENT.QQ.5723_AIO.0&ADPUBNO=27456',
   },
+  {
+    hostname: 'docs.qq.com',
+    pathname: '/scenario/link',
+    param: 'url',
+    title: '腾讯文档',
+    example: 'https://docs.qq.com/scenario/link?url=https%3A%2F%2Fcocos.com',
+  },
 ];
