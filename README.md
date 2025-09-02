@@ -13,10 +13,15 @@
 <div align="center">
 <p>
     <a href="https://chromewebstore.google.com/detail/redirect-skipper/bcjldhihfjnhgmkmdeojigknladnbcek?authuser=0&hl=zh-CN" target="_blank">
-    <img src="./screenshots/chrome.png" width="16" /> Chrome 商店安装
+    <img src="./screenshots/icon-chrome.png" width="16" /> Chrome 商店安装
   </a>
+  &nbsp;&nbsp;
   <a href="https://chromewebstore.google.com/detail/redirect-skipper/bcjldhihfjnhgmkmdeojigknladnbcek?authuser=0&hl=zh-CN" target="_blank">
-    <img src="./screenshots/edge.png" width="16" /> Edge 
+    <img src="./screenshots/icon-edge.png" width="16" /> Edge 
+  </a>
+  &nbsp;&nbsp;
+    <a href="https://addons.mozilla.org/zh-CN/firefox/addon/redirect-skipper/" target="_blank">
+    <img src="./screenshots/icon-chrome.png" width="16" /> Firefox 审核中
   </a>
 
 </p>
