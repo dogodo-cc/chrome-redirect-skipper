@@ -21,7 +21,7 @@
   </a>
   &nbsp;&nbsp;
     <a href="https://addons.mozilla.org/zh-CN/firefox/addon/redirect-skipper/" target="_blank">
-    <img src="./screenshots/icon-firefox.png" width="16" /> Firefox 审核中
+    <img src="./screenshots/icon-firefox.png" width="16" /> Firefox 
   </a>
 
 </p>
