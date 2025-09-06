@@ -78,5 +78,7 @@ export function message(text, type = 'info') {
 }
 
 export function generateIssueUrl(content) {
-  return `https://github.com/dogodo-cc/chrome-redirect-skipper/issues/new?title=${encodeURIComponent('report a new link')}&body=${encodeURIComponent(content)}`;
+  return `https://github.com/dogodo-cc/chrome-redirect-skipper/issues/new?title=${encodeURIComponent('report a new link')}&body=${encodeURIComponent(
+    content + '\n\n---\n\n' + 'More welcome to submit a PR'
+  )}`;
 }

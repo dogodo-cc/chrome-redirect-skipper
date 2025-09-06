@@ -197,4 +197,12 @@ export default [
     title: '腾讯文档',
     example: 'https://docs.qq.com/scenario/link?url=https%3A%2F%2Fcocos.com',
   },
+  {
+    hostname: 'cloud.tencent.com',
+    pathname: '/developer/tools/blog-entry',
+    param: 'target',
+    title: '腾讯云',
+    example:
+      'https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2Fgithub.com%2FYutaka-Sawada%2FMultiPar%2Freleases&objectId=2219115&objectType=1&contentType=undefined',
+  },
 ];
