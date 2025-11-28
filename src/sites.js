@@ -205,4 +205,11 @@ export default [
     example:
       'https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2Fgithub.com%2FYutaka-Sawada%2FMultiPar%2Freleases&objectId=2219115&objectType=1&contentType=undefined',
   },
+  {
+    hostname: 'www.google.com.hk',
+    pathname: '/url',
+    param: 'q',
+    title: 'Google 香港',
+    example: 'https://www.google.com.hk/url?q=https%3A%2F%2Fwww.jd.com%2F%3Fcountry%3DUSA',
+  },
 ];
