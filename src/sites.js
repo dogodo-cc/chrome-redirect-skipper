@@ -206,6 +206,13 @@ export default [
       'https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2Fgithub.com%2FYutaka-Sawada%2FMultiPar%2Freleases&objectId=2219115&objectType=1&contentType=undefined',
   },
   {
+    hostname: 'www.kdocs.cn',
+    pathname: '/office/link',
+    param: 'target',
+    title: '金山文档',
+    example: 'https://www.kdocs.cn/office/link?target=https%3A%2F%2Fkk.baoergu.com&fileId=445556776651',
+  },
+  {
     hostname: 'www.google.com.hk',
     pathname: '/url',
     param: 'q',
