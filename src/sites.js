@@ -212,4 +212,11 @@ export default [
     title: '金山文档',
     example: 'https://www.kdocs.cn/office/link?target=https%3A%2F%2Fkk.baoergu.com&fileId=445556776651',
   },
+  {
+    hostname: 'www.google.com.hk',
+    pathname: '/url',
+    param: 'q',
+    title: 'Google 香港',
+    example: 'https://www.google.com.hk/url?q=https%3A%2F%2Fwww.jd.com%2F%3Fcountry%3DUSA',
+  },
 ];
