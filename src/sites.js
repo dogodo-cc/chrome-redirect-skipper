@@ -184,6 +184,13 @@ export default [
       'https://seccaptcha.baidu.com/v1/webapi/verint/svcp.html?ak=lBdQoPALalwAmGSRgKmMzI7cEErgRFZK&backurl=https%3A%2F%2Fbsb.baidu.com%2Fdiagnosis%3Fs_cap%3Dhttps%253A%2F%2Fwww.example.com&ctype=p_spin&ts=1756448493&sign=6e1e4436c160be7d3cf354f4d06e7397',
   },
   {
+    hostname: 'tieba.baidu.com',
+    pathname: '/mo/q/checkurl',
+    title: '百度贴吧',
+    param: 'url',
+    example: 'https://tieba.baidu.com/mo/q/checkurl?url=https%3A%2F%2Fcloud.189.cn%2Ft%2F6jQ7BbnaqUFn&urlrefer=c917c90d7eb29ed7ca17c597e817fe8a',
+  },
+  {
     hostname: 'c.pc.qq.com',
     title: 'QQ 安全中心',
     param: 'pfurl',
