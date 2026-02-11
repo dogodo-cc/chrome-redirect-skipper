@@ -236,7 +236,13 @@ export default [
       const target = urlObj.searchParams.get('target');
       if (target) {
         try {
-          return atob(target);
+          const decoded = atob(target);
+          // Validate that the decoded URL is a safe HTTP/HTTPS URL
+          const targetUrl = new URL(decoded);
+          if (targetUrl.protocol === 'http:' || targetUrl.protocol === 'https:') {
+            return decoded;
+          }
+          return '';
         } catch (e) {
           return '';
         }
