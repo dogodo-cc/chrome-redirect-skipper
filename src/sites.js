@@ -259,5 +259,29 @@ export default [
     },
     example:
       'https://jump2.bdimg.com/safecheck/index?url=rN3wPs8te/pjz8pBqGzzzzaW4WFUTyCxEKS+pQ5Nttjr2uAMWdahP1GqNiv2gRPiuW2ln5mMyf/SFV1x/lEH3W60ibUui7IJCffeoXtreurzROPHR9ebf+Ih67tHKGgBZAWf8SbXleGpjMhMko4mnXY9qHh6BM0y',
+  },{
+    hostname: 'blog.ziyibbs.com',
+    pathname: '/go/',
+    title: '紫忆论坛',
+    param: 'target',
+    getTargetUrl: (url) => {
+      const urlObj = new URL(url);
+      const target = urlObj.searchParams.get('target');
+      if (target) {
+        try {
+          const decoded = atob(target);
+          // Validate that the decoded URL is a safe HTTP/HTTPS URL
+          const targetUrl = new URL(decoded);
+          if (targetUrl.protocol === 'http:' || targetUrl.protocol === 'https:') {
+            return decoded;
+          }
+          return '';
+        } catch (e) {
+          return '';
+        }
+      }
+      return '';
+    },
+    example: 'https://blog.ziyibbs.com/go/?target=aHR0cHM6Ly9iZC5iZHdwd2ViLnNob3AvcXVhcmsv',
   },
 ];
