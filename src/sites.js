@@ -284,4 +284,29 @@ export default [
     },
     example: 'https://blog.ziyibbs.com/go/?target=aHR0cHM6Ly9iZC5iZHdwd2ViLnNob3AvcXVhcmsv',
   },
+  {
+    hostname: 'www.hackv.cn',
+    pathname: '/%e5%a4%96%e9%93%be%e8%b7%b3%e8%bd%ac.html',
+    title: 'HackV',
+    param: 'url',
+    getTargetUrl: (url) => {
+      const urlObj = new URL(url);
+      const target = urlObj.searchParams.get('url');
+      if (target) {
+        try {
+          const decoded = atob(target);
+          const targetUrl = new URL(decoded);
+          if (targetUrl.protocol === 'http:' || targetUrl.protocol === 'https:') {
+            return decoded;
+          }
+          return '';
+        } catch (e) {
+          return '';
+        }
+      }
+      return '';
+    },
+    example:
+      'https://www.hackv.cn/%e5%a4%96%e9%93%be%e8%b7%b3%e8%bd%ac.html?url=aHR0cHM6Ly9oYWNrdi5sYW56b3V1LmNvbS9iMDF0bzlnNHNk',
+  },
 ];
