@@ -226,4 +226,26 @@ export default [
     title: 'Google 香港',
     example: 'https://www.google.com.hk/url?q=https%3A%2F%2Fwww.jd.com%2F%3Fcountry%3DUSA',
   },
+  {
+    hostname: 'jump2.bdimg.com',
+    pathname: '/safecheck/index',
+    title: '百度贴吧安全跳转',
+    param: 'url',
+    getTargetUrl: (url) => {
+      return fetch(url)
+        .then((res) => res.text())
+        .then((text) => {
+          const match = text.match(/<a[^>]+href="(https?:\/\/[^"]+)"/i);
+          if (match && match[1]) {
+            return match[1];
+          }
+          return '';
+        })
+        .catch(() => {
+          return '';
+        });
+    },
+    example:
+      'https://jump2.bdimg.com/safecheck/index?url=rN3wPs8te/pjz8pBqGzzzzaW4WFUTyCxEKS+pQ5Nttjr2uAMWdahP1GqNiv2gRPiuW2ln5mMyf/SFV1x/lEH3W60ibUui7IJCffeoXtreurzROPHR9ebf+Ih67tHKGgBZAWf8SbXleGpjMhMko4mnXY9qHh6BM0y',
+  },
 ];
