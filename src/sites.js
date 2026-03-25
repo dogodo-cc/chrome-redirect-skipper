@@ -226,4 +226,29 @@ export default [
     title: 'Google 香港',
     example: 'https://www.google.com.hk/url?q=https%3A%2F%2Fwww.jd.com%2F%3Fcountry%3DUSA',
   },
+  {
+    hostname: 'blog.ziyibbs.com',
+    pathname: '/go/',
+    title: '紫忆论坛',
+    param: 'target',
+    getTargetUrl: (url) => {
+      const urlObj = new URL(url);
+      const target = urlObj.searchParams.get('target');
+      if (target) {
+        try {
+          const decoded = atob(target);
+          // Validate that the decoded URL is a safe HTTP/HTTPS URL
+          const targetUrl = new URL(decoded);
+          if (targetUrl.protocol === 'http:' || targetUrl.protocol === 'https:') {
+            return decoded;
+          }
+          return '';
+        } catch (e) {
+          return '';
+        }
+      }
+      return '';
+    },
+    example: 'https://blog.ziyibbs.com/go/?target=aHR0cHM6Ly9iZC5iZHdwd2ViLnNob3AvcXVhcmsv',
+  },
 ];
