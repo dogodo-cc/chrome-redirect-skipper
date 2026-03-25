@@ -285,6 +285,13 @@ export default [
     example: 'https://blog.ziyibbs.com/go/?target=aHR0cHM6Ly9iZC5iZHdwd2ViLnNob3AvcXVhcmsv',
   },
   {
+    hostname: 'huaban.com',
+    pathname: '/go',
+    title: '花瓣',
+    param: 'url',
+    example: 'https://huaban.com/go?pin_id=5037397658&url=https%3A%2F%2Fpolayoutu.com',
+  },
+  {
     hostname: 'www.hackv.cn',
     pathname: '/%e5%a4%96%e9%93%be%e8%b7%b3%e8%bd%ac.html',
     title: 'HackV',
