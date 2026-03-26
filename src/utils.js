@@ -1,4 +1,7 @@
 import { browser } from './browser-wrap.js';
+
+export const MESSAGE_GET_ALL_SITES = 'get-all-sites';
+
 export const targetParams = [
   'target',
   'link',

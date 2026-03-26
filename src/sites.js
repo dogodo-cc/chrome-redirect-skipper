@@ -1,58 +1,9 @@
 /**
- *  hostname: The hostname of the redirect service.
- *  pathname: The specific path to match (optional).
- *  title: The display name of the redirect service.
- *  param: The query parameter name for the target URL.
- *  getTargetUrl: A function to extract the target URL from the full URL (optional).
+ * Only keep rules that require custom JavaScript extraction logic.
+ * Static rules are now stored in sites.json.
  */
 
 export default [
-  {
-    hostname: 'link.juejin.cn',
-    title: '掘金',
-    param: 'target',
-    example: 'https://link.juejin.cn/?target=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'sspai.com',
-    pathname: '/link',
-    title: '少数派',
-    param: 'target',
-    example: 'https://sspai.com/link?target=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'link.zhihu.com',
-    title: '知乎',
-    param: 'target',
-    example: 'https://link.zhihu.com/?target=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'link.csdn.net',
-    title: 'CSDN',
-    param: 'target',
-    example: 'https://link.csdn.net/?from_id=147127098&target=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'www.jianshu.com',
-    pathname: '/go-wild',
-    title: '简书',
-    param: 'url',
-    example: 'https://www.jianshu.com/go-wild?ac=2&url=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'gitee.com',
-    pathname: '/link',
-    title: 'Gitte',
-    param: 'target',
-    example: 'https://gitee.com/link?target=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'afdian.com',
-    pathname: '/link',
-    title: '爱发电',
-    param: 'target',
-    example: 'https://afdian.com/link?target=https%3A%2F%2Fcocos.com',
-  },
   {
     hostname: 'blog.51cto.com',
     pathname: '/transfer',
@@ -61,55 +12,6 @@ export default [
       return url.replace('https://blog.51cto.com/transfer?', '');
     },
     example: 'https://blog.51cto.com/transfer?https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'weibo.cn',
-    pathname: '/sinaurl',
-    title: '微博',
-    param: ['toasturl', 'url', 'u'],
-    example: 'https://weibo.cn/sinaurl?toasturl=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'www.youtube.com',
-    pathname: '/redirect',
-    param: 'q',
-    title: 'YouTube',
-    example: 'https://www.youtube.com/redirect?q=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'www.yuque.com',
-    pathname: '/r/goto',
-    param: 'url',
-    title: '语雀',
-    example: 'https://www.yuque.com/r/goto?url=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'developer.aliyun.com',
-    pathname: '/redirect',
-    param: 'target',
-    title: '阿里云',
-    example: 'https://developer.aliyun.com/redirect?target=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'www.douban.com',
-    pathname: '/link2',
-    title: '豆瓣',
-    param: 'url',
-    example: 'https://www.douban.com/link2/?url=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'xie.infoq.cn',
-    pathname: '/link',
-    title: 'InfoQ(写作社区)',
-    param: 'target',
-    example: 'https://xie.infoq.cn/link?target=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'www.infoq.cn',
-    pathname: '/link',
-    title: 'InfoQ',
-    param: 'target',
-    example: 'https://www.infoq.cn/link?target=https%3A%2F%2Fcocos.com',
   },
   {
     hostname: 'www.iplaysoft.com',
@@ -134,27 +36,6 @@ export default [
           return '';
         });
     },
-  },
-  {
-    hostname: 'www.oschina.net',
-    pathname: '/action/GoToLink',
-    title: 'OSChina',
-    param: 'url',
-    example: 'https://www.oschina.net/action/GoToLink?url=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'www.gcores.com',
-    pathname: '/link',
-    title: '机核',
-    param: 'target',
-    example: 'https://www.gcores.com/link?target=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'urlsec.qq.com',
-    pathname: '/check',
-    title: '腾讯安全中心',
-    param: 'url',
-    example: 'https://urlsec.qq.com/check.html?url=https%3A%2F%2Fwww.example.com',
   },
   {
     hostname: 'seccaptcha.baidu.com',
@@ -184,49 +65,6 @@ export default [
       'https://seccaptcha.baidu.com/v1/webapi/verint/svcp.html?ak=lBdQoPALalwAmGSRgKmMzI7cEErgRFZK&backurl=https%3A%2F%2Fbsb.baidu.com%2Fdiagnosis%3Fs_cap%3Dhttps%253A%2F%2Fwww.example.com&ctype=p_spin&ts=1756448493&sign=6e1e4436c160be7d3cf354f4d06e7397',
   },
   {
-    hostname: 'tieba.baidu.com',
-    pathname: '/mo/q/checkurl',
-    title: '百度贴吧',
-    param: 'url',
-    example: 'https://tieba.baidu.com/mo/q/checkurl?url=https%3A%2F%2Fcloud.189.cn%2Ft%2F6jQ7BbnaqUFn&urlrefer=c917c90d7eb29ed7ca17c597e817fe8a',
-  },
-  {
-    hostname: 'c.pc.qq.com',
-    title: 'QQ 安全中心',
-    param: 'pfurl',
-    example:
-      'https://c.pc.qq.com/middlem.html?pfurl=https%3A%2F%2Fkongdetuo%2Egithub%2Eio%2Fposts%2Favalonia%2Dbinding%2Dto%2Ddatatable%2F&pfuin=2809735321&pfto=qq.msg&type=0&gjlevel=15&gjsublevel=2804&iscontinue=0&ADUIN=2809735321&ADSESSION=1756427704&ADTAG=CLIENT.QQ.5723_AIO.0&ADPUBNO=27456',
-  },
-  {
-    hostname: 'docs.qq.com',
-    pathname: '/scenario/link',
-    param: 'url',
-    title: '腾讯文档',
-    example: 'https://docs.qq.com/scenario/link?url=https%3A%2F%2Fcocos.com',
-  },
-  {
-    hostname: 'cloud.tencent.com',
-    pathname: '/developer/tools/blog-entry',
-    param: 'target',
-    title: '腾讯云',
-    example:
-      'https://cloud.tencent.com/developer/tools/blog-entry?target=https%3A%2F%2Fgithub.com%2FYutaka-Sawada%2FMultiPar%2Freleases&objectId=2219115&objectType=1&contentType=undefined',
-  },
-  {
-    hostname: 'www.kdocs.cn',
-    pathname: '/office/link',
-    param: 'target',
-    title: '金山文档',
-    example: 'https://www.kdocs.cn/office/link?target=https%3A%2F%2Fkk.baoergu.com&fileId=445556776651',
-  },
-  {
-    hostname: 'www.google.com.hk',
-    pathname: '/url',
-    param: 'q',
-    title: 'Google 香港',
-    example: 'https://www.google.com.hk/url?q=https%3A%2F%2Fwww.jd.com%2F%3Fcountry%3DUSA',
-  },
-  {
     hostname: 'jump2.bdimg.com',
     pathname: '/safecheck/index',
     title: '百度贴吧(安全检查)',
@@ -239,12 +77,7 @@ export default [
             try {
               const href = match[1];
               const { hostname } = new URL(href);
-              if (
-                hostname !== 'baidu.com' &&
-                !hostname.endsWith('.baidu.com') &&
-                hostname !== 'bdimg.com' &&
-                !hostname.endsWith('.bdimg.com')
-              ) {
+              if (hostname !== 'baidu.com' && !hostname.endsWith('.baidu.com') && hostname !== 'bdimg.com' && !hostname.endsWith('.bdimg.com')) {
                 return href;
               }
             } catch (_) {
@@ -259,7 +92,8 @@ export default [
     },
     example:
       'https://jump2.bdimg.com/safecheck/index?url=rN3wPs8te/pjz8pBqGzzzzaW4WFUTyCxEKS+pQ5Nttjr2uAMWdahP1GqNiv2gRPiuW2ln5mMyf/SFV1x/lEH3W60ibUui7IJCffeoXtreurzROPHR9ebf+Ih67tHKGgBZAWf8SbXleGpjMhMko4mnXY9qHh6BM0y',
-  },{
+  },
+  {
     hostname: 'blog.ziyibbs.com',
     pathname: '/go/',
     title: '紫忆论坛',
@@ -285,13 +119,6 @@ export default [
     example: 'https://blog.ziyibbs.com/go/?target=aHR0cHM6Ly9iZC5iZHdwd2ViLnNob3AvcXVhcmsv',
   },
   {
-    hostname: 'huaban.com',
-    pathname: '/go',
-    title: '花瓣',
-    param: 'url',
-    example: 'https://huaban.com/go?pin_id=5037397658&url=https%3A%2F%2Fpolayoutu.com',
-  },
-  {
     hostname: 'www.hackv.cn',
     pathname: '/%e5%a4%96%e9%93%be%e8%b7%b3%e8%bd%ac.html',
     title: 'HackV',
@@ -313,7 +140,6 @@ export default [
       }
       return '';
     },
-    example:
-      'https://www.hackv.cn/%e5%a4%96%e9%93%be%e8%b7%b3%e8%bd%ac.html?url=aHR0cHM6Ly9oYWNrdi5sYW56b3V1LmNvbS9iMDF0bzlnNHNk',
+    example: 'https://www.hackv.cn/%e5%a4%96%e9%93%be%e8%b7%b3%e8%bd%ac.html?url=aHR0cHM6Ly9oYWNrdi5sYW56b3V1LmNvbS9iMDF0bzlnNHNk',
   },
 ];

@@ -1,32 +1,32 @@
 {
-  "$schema": "https://json.schemastore.org/chrome-manifest.json",
-  "name": "redirect-skipper",
-  "version": "3.0.4",
-  "description": "A browser extension that bypasses redirect warning pages.",
-  "homepage_url": "https://github.com/dogodo-cc/redirect-skipper",
-  "manifest_version": 3,
-  "permissions": ["tabs", "storage"],
-  "host_permissions": ["https://www.iplaysoft.com/*"],
-  "background": {
-    "service_worker": "./src/service_worker.js",
-    "type": "module"
-  },
-  "action": {
-    "default_popup": "page-popup.html",
-    "default_icon": {
-      "16": "images/logo-16.png",
-      "32": "images/logo-32.png",
-      "64": "images/logo-64.png",
-      "128": "images/logo-128.png"
+    "$schema": "https://json.schemastore.org/chrome-manifest.json",
+    "name": "redirect-skipper",
+    "version": "3.1.4",
+    "description": "跳过外部链接的中转页，直接访问目标链接",
+    "homepage_url": "https://github.com/dogodo-cc/chrome-redirect-skipper",
+    "manifest_version": 3,
+    "permissions": ["tabs", "storage"],
+    "host_permissions": ["https://www.iplaysoft.com/*", "https://raw.githubusercontent.com/*", "https://jump2.bdimg.com/*"],
+    "background": {
+        "service_worker": "./src/service_worker.js",
+        "type": "module"
     },
-    "default_title": "Add current page to skip list"
-  },
-  "options_page": "page-options.html",
-  "icons": {
-    "16": "images/logo-16.png",
-    "32": "images/logo-32.png",
-    "64": "images/logo-64.png",
-    "128": "images/logo-128.png"
-  },
-  "default_locale": "en"
+    "action": {
+        "default_popup": "page-popup.html",
+        "default_icon": {
+            "16": "images/logo-16.png",
+            "32": "images/logo-32.png",
+            "64": "images/logo-64.png",
+            "128": "images/logo-128.png"
+        },
+        "default_title": "Add current page to skip list"
+    },
+    "options_page": "page-options.html",
+    "icons": {
+        "16": "images/logo-16.png",
+        "32": "images/logo-32.png",
+        "64": "images/logo-64.png",
+        "128": "images/logo-128.png"
+    },
+    "default_locale": "en"
 }

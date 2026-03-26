@@ -83,6 +83,19 @@ flowchart TB
 
 ```
 
+## host_permissions 说明
+
+将解释 host_permissions 里的每个地址为什么需要申请权限
+
+### 目标地址需要 fetch 去请求内容来解析的网站列表
+
+- "https://www.iplaysoft.com/*"
+- "https://jump2.bdimg.com/*"
+
+### 用于更新 sites.json 数据
+
+- "https://raw.githubusercontent.com/*",
+
 ### 产品历程
 
 - 2.x https://juejin.cn/post/7509300461191659560

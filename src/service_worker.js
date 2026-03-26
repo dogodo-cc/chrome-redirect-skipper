@@ -1,11 +1,11 @@
 import { browser } from './browser-wrap.js';
-import sites from './sites.js';
-import { getTargetUrl } from './utils.js';
+import { siteManager } from './site-config.js';
+import { getTargetUrl, MESSAGE_GET_ALL_SITES } from './utils.js';
 
-let sitesLocal = [];
 let isFuzzy = false;
 let isFirefox = false;
 
+// 提取目标 URL 的逻辑
 async function extractTargetUrl(link) {
   try {
     if (/^http/.test(link) === false) {
@@ -14,7 +14,7 @@ async function extractTargetUrl(link) {
 
     const url = new URL(link);
 
-    const site = [...sites, ...sitesLocal].find((site) => site.hostname === url.hostname);
+    const site = siteManager.allSites.find((site) => site.hostname === url.hostname);
 
     let targetUrl = '';
 
@@ -37,7 +37,7 @@ async function extractTargetUrl(link) {
     }
 
     return targetUrl;
-  } catch (error) {
+  } catch (_) {
     return '';
   }
 }
@@ -75,6 +75,17 @@ browser.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   }
 });
 
+browser.runtime.onMessage.addListener(async (message) => {
+  if (!message || message.type !== MESSAGE_GET_ALL_SITES) {
+    return undefined;
+  }
+
+  // 每次 UI 请求都主动刷新一次，确保返回最新规则。
+  await siteManager.loadRemoteStaticSites();
+  await siteManager.loadUserSites();
+  return siteManager.allSitesSerializable;
+});
+
 // 2.x 是在 browser.runtime.onInstalled 执行 init
 // 在 Firefox 中点击 reload 不会触发，所以直接执行 init
 
@@ -84,16 +95,7 @@ const init = async () => {
     browser.action.setTitle({ title });
   }
 
-  // 初始化 local sites
-  browser.storage.sync.get('sites').then((result) => {
-    if (Array.isArray(result.sites)) {
-      // 如果官方的 sites 已经收录了某些站点，则将其从用户配置列表中删除
-      sitesLocal = result.sites.filter((localSite) => sites.every((s) => s.hostname !== localSite.hostname));
-
-      // 将剔除重复后的 sitesLocal 保存到 storage
-      browser.storage.sync.set({ sites: sitesLocal });
-    }
-  });
+  siteManager.load();
 
   // 初始化 fuzzy
   browser.storage.sync.get('fuzzy').then((result) => {
@@ -104,7 +106,7 @@ const init = async () => {
   browser.storage.onChanged.addListener((changes, area) => {
     if (area === 'sync') {
       if (changes.sites) {
-        sitesLocal = changes.sites.newValue;
+        siteManager.loadUserSites();
       }
 
       if (changes.fuzzy) {
