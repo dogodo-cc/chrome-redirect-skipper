@@ -69,7 +69,27 @@ class SiteManager {
 
     get officialStaticSites() {
         // 获取静态规则列表，远程静态规则优先级高于内置静态规则
-        return [...this.#remoteStaticSites, ...this.#builtInStaticSites];
+        // 按 hostname 去重，优先使用远程规则（#remoteStaticSites）
+        const seen = new Set();
+        const result = [];
+
+        // 先加入远程规则，确保远程规则优先
+        for (const site of this.#remoteStaticSites) {
+            if (site && typeof site.hostname === 'string' && !seen.has(site.hostname)) {
+                seen.add(site.hostname);
+                result.push(site);
+            }
+        }
+
+        // 再加入内置规则，跳过已存在的 hostname
+        for (const site of this.#builtInStaticSites) {
+            if (site && typeof site.hostname === 'string' && !seen.has(site.hostname)) {
+                seen.add(site.hostname);
+                result.push(site);
+            }
+        }
+
+        return result;
     }
 
     get officialSites() {

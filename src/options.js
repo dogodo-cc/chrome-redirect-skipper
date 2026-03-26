@@ -111,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
 function deleteSite(hostname) {
     return new Promise((resolve, reject) => {
         browser.storage.sync.get('sites').then((result) => {
