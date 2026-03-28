@@ -28,5 +28,13 @@
         "64": "images/logo-64.png",
         "128": "images/logo-128.png"
     },
-    "default_locale": "en"
+    "default_locale": "en",
+    "browser_specific_settings": {
+        "gecko": {
+            "data_collection_permissions": {
+                "required": [],
+                "optional": []
+            }
+        }
+    }
 }
