@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/chrome-manifest.json",
     "name": "redirect-skipper",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "description": "跳过外部链接的中转页，直接访问目标链接",
     "homepage_url": "https://github.com/dogodo-cc/chrome-redirect-skipper",
     "manifest_version": 3,
@@ -28,13 +28,5 @@
         "64": "images/logo-64.png",
         "128": "images/logo-128.png"
     },
-    "default_locale": "en",
-    "browser_specific_settings": {
-        "gecko": {
-            "data_collection_permissions": {
-                "required": [],
-                "optional": []
-            }
-        }
-    }
+    "default_locale": "en"
 }
