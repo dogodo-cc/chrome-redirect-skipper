@@ -133,8 +133,8 @@ function isValidStaticSite(site) {
         return false;
     }
 
-    // param、pathname、example 字段如果存在，必须是字符串
-    if (site.param != null && typeof site.param !== 'string') {
+    // param 字段如果存在，必须是字符串或字符串数组
+    if (site.param != null && typeof site.param !== 'string' && !Array.isArray(site.param)) {
         return false;
     }
 
