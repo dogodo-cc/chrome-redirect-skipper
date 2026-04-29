@@ -180,3 +180,4 @@ async function fetchSitesJson(url, options = {}, timeout = 10000) {
 }
 
 export const siteManager = new SiteManager();
+export { SiteManager, isValidStaticSite, filterSites, fetchSitesJson };

@@ -1,63 +1,10 @@
 import { browser } from './browser-wrap.js';
 import { siteManager } from './site-config.js';
-import { getTargetUrl, MESSAGE_GET_ALL_SITES } from './utils.js';
+import { MESSAGE_GET_ALL_SITES } from './utils.js';
+import { extractTargetUrl } from './redirect-engine.js';
 
 let isFuzzy = false;
 let isFirefox = false;
-
-// 登录/认证类页面关键词，命中后在模糊匹配分支中静默处理
-const LOGIN_KEYWORDS = new Set(['login', 'signin', 'sign-in', 'sign_in', 'auth', 'oauth', 'sso', 'passport', 'account']);
-
-function isLoginLikePage(url) {
-    // 按路径段匹配，避免对 "blogging"、"fashion" 等词产生误判
-    const pathSegments = url.pathname.toLowerCase().split('/').filter(Boolean);
-    if (pathSegments.some((segment) => LOGIN_KEYWORDS.has(segment))) {
-        return true;
-    }
-    // 按子域名段匹配（例如 passport.weibo.com、sso.example.com）
-    const hostParts = url.hostname.toLowerCase().split('.');
-    return hostParts.some((part) => LOGIN_KEYWORDS.has(part));
-}
-
-// 提取目标 URL 的逻辑
-async function extractTargetUrl(link) {
-    try {
-        if (/^http/.test(link) === false) {
-            return '';
-        }
-
-        const url = new URL(link);
-
-        const site = siteManager.allSites.find((site) => site.hostname === url.hostname);
-
-        let targetUrl = '';
-
-        if (site) {
-            if (site.pathname && !url.pathname.startsWith(site.pathname)) {
-                // 如果站点有特定的路径，则需要当前URL的路径也匹配
-                targetUrl = '';
-                return targetUrl;
-            }
-
-            if (typeof site.getTargetUrl === 'function') {
-                targetUrl = await site.getTargetUrl(link);
-            } else {
-                targetUrl = getTargetUrl(url.searchParams, site.param, true);
-            }
-        } else if (isFuzzy) {
-            // 如果没有找到匹配的站点且启用了模糊匹配，则尝试从URL中提取目标URL
-            // 只使用常见的参数列表来获取目标 URL （不用所有参数列表是避免误判）
-            // 对「类登录页面」进行静默处理，避免把登录页携带的目标地址误判为跳转目标
-            if (!isLoginLikePage(url)) {
-                targetUrl = getTargetUrl(url.searchParams, ['target', 'link', 'href', 'url'], false);
-            }
-        }
-
-        return targetUrl;
-    } catch (_) {
-        return '';
-    }
-}
 
 // browser.webNavigation.onBeforeNavigate
 // browser.webNavigation.onCommitted
@@ -72,7 +19,7 @@ browser.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
     const statusToWatch = isFirefox ? 'complete' : 'loading';
     if (url && changeInfo.status === statusToWatch) {
         try {
-            const targetUrl = await extractTargetUrl(url);
+            const targetUrl = await extractTargetUrl(url, { isFuzzy });
 
             // 如果没有提取到目标地址，或者目标地址和当前地址相同，则不处理
 
