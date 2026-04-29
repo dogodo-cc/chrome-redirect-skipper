@@ -10,9 +10,11 @@
     "build:firefox": "node ./scripts/build.js --firefox",
     "build": "npm run build:chrome && npm run build:firefox"
   },
+  "dependencies": {
+    "webextension-polyfill": "^0.12.0"
+  },
   "devDependencies": {
     "@vitest/coverage-v8": "^4.1.5",
-    "vitest": "^4.1.5",
-    "webextension-polyfill": "^0.12.0"
+    "vitest": "^4.1.5"
   }
 }

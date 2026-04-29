@@ -1,4 +1,4 @@
-import { readFile, writeFile, rm, copyFile, cp } from 'node:fs/promises';
+import { readFile, writeFile, rm, copyFile, cp, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { exec } from 'node:child_process';
 
@@ -20,9 +20,14 @@ const zipName = isChrome ? 'redirect-skipper-chrome.zip' : 'redirect-skipper-fir
 (async function () {
     await rm(distPath, { recursive: true, force: true });
 
-    await cp(join(root, 'node_modules/'), join(distPath, 'node_modules/'), {
-        recursive: true,
-    });
+    const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf-8'));
+    const runtimeDeps = Object.keys(pkg.dependencies || {});
+    await mkdir(join(distPath, 'node_modules'), { recursive: true });
+    for (const dep of runtimeDeps) {
+        await cp(join(root, 'node_modules', dep), join(distPath, 'node_modules', dep), {
+            recursive: true,
+        });
+    }
 
     await cp(join(root, '_locales/'), join(distPath, '_locales/'), {
         recursive: true,
