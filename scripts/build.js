@@ -20,6 +20,9 @@ const zipName = isChrome ? 'redirect-skipper-chrome.zip' : 'redirect-skipper-fir
 (async function () {
     await rm(distPath, { recursive: true, force: true });
 
+    // 只复制 dependencies 中声明的顶层包，不处理传递依赖。
+    // 若未来新增的运行时依赖自身还有依赖，需额外收集传递依赖一并复制。
+    // 或者后期改用更专业的工具（如 webpack）打包，避免手动维护依赖列表。
     const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf-8'));
     const runtimeDeps = Object.keys(pkg.dependencies || {});
     await mkdir(join(distPath, 'node_modules'), { recursive: true });
