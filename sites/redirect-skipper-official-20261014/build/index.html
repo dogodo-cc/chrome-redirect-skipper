@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="Redirect-Skipper 自动跳过知乎、掘金、CSDN 等网站的外链中转页。轻量开源，支持 Chrome、Edge 和 Firefox，也可以添加自己的跳转规则。">
+  <title>Redirect-Skipper — 少一次中转，直接到达</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="header">
+    <a class="brand" href="#" aria-label="Redirect-Skipper 首页"><img src="assets/logo.png" width="30" height="30" alt=""><span>Redirect<span class="brand-light">-Skipper</span></span></a>
+    <nav aria-label="主导航"><a href="#features">功能</a><a href="#sites">支持站点</a><a href="#guide">使用指南</a><a class="github-nav" href="https://github.com/dogodo-cc/chrome-redirect-skipper" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <a class="button button-small" href="#install">安装扩展 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> 给浏览器，少一点打扰 <span class="version">v3.1.3</span></div>
+        <h1>好内容，<br>值得<span class="accent">直接抵达。</span></h1>
+        <p class="hero-description">知乎、掘金、CSDN 的外链中转页？<br>让 Redirect-Skipper 帮你跳过，<br class="mobile-break">把注意力留给真正想看的内容。</p>
+        <div class="hero-actions"><a class="button" href="https://chromewebstore.google.com/detail/redirect-skipper/bcjldhihfjnhgmkmdeojigknladnbcek" target="_blank" rel="noopener noreferrer"><img src="assets/icon-chrome.png" width="21" height="21" alt=""> 添加至 Chrome <span aria-hidden="true">↗</span></a><a class="text-link" href="#demo">看看它如何工作 <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-note"><span>免费 · 开源 · 轻量</span><span class="note-line"></span><a href="#install">也支持 Edge / Firefox</a></div>
+      </div>
+      <div class="hero-visual" id="demo">
+        <div class="visual-label"><span>LESS FRICTION. MORE FLOW.</span><span>01 / DIRECT</span></div>
+        <div class="browser-demo">
+          <div class="browser-bar"><div class="window-dots"><i></i><i></i><i></i></div><div class="address"><span aria-hidden="true">⌑</span> <span id="demo-address">github.com</span><span aria-hidden="true">↻</span></div></div>
+          <div class="demo-canvas" data-enabled="true">
+            <div class="demo-heading"><span class="demo-heading-icon">↗</span><div><strong id="demo-headline">链接，直接打开。</strong><small>你的下一站，无需多等一步。</small></div><span class="live-badge" id="demo-badge">已跳过</span></div>
+            <div class="journey" aria-label="从原网站跳过中转页，直接抵达目标网站">
+              <svg class="route" viewBox="0 0 500 180" preserveAspectRatio="none" aria-hidden="true"><path class="long-path" d="M60 110 H440"/><path class="direct-path" d="M60 110 C60 0 440 0 440 110"/><path class="route-arrow" d="M431 99 L440 111 L449 99"/></svg>
+              <div class="journey-node origin"><div class="node-icon zhihu">知</div><strong>原网站</strong><small>发现一篇好内容</small></div>
+              <div class="journey-node middle"><div class="node-icon gate"><span>↗</span><b class="cross">×</b></div><strong>外链中转页</strong><small id="middle-note">这一步，交给我们</small></div>
+              <div class="journey-node destination"><div class="node-icon target">↗</div><strong>目标网站</strong><small>继续你的探索</small></div>
+              <span class="route-label" id="route-label">SKIP THE EXTRA STEP</span>
+            </div>
+            <div class="destination-preview"><span class="preview-mark">⌘</span><div><strong>Welcome to your next idea.</strong><small>内容已就绪，继续探索吧。</small></div><span class="preview-check">✓</span></div>
+          </div>
+          <div class="demo-controls"><div><button class="switch" id="demo-switch" role="switch" aria-checked="true" aria-label="切换跳转效果演示"><span></span></button><span>Redirect-Skipper <strong id="switch-label">已开启</strong></span></div><span class="demo-caption">交互演示</span></div>
+        </div>
+        <div class="visual-foot"><span class="tiny-arrow">↳</span> 点击开关，感受少一步的轻松 <span class="visual-stamp">BUILT TO GET OUT OF YOUR WAY</span></div>
+      </div>
+    </section>
+    <section class="site-strip wrap" aria-label="支持的常用站点"><p>从你熟悉的网站，<br><strong>顺畅出发。</strong></p><div><span class="strip-zhihu">知乎</span><span class="strip-juejin"><b>◈</b> 掘金</span><span class="strip-csdn">CSDN</span><span class="strip-sspai"><b>◉</b> 少数派</span><span class="strip-jianshu">简书</span><span class="strip-gitee">gitee</span></div><a href="#sites">还有更多 <span aria-hidden="true">↗</span></a></section>
+    <section class="features wrap section" id="features">
+      <div class="section-intro"><div><span class="section-kicker">01 / MADE FOR YOUR FLOW</span><h2>浏览的节奏，<br>由你掌握。</h2></div><p>一个小扩展，让阅读、查资料和发现灵感<br>连贯起来。安装一次，剩下的交给它。</p></div>
+      <div class="feature-grid">
+        <article class="feature feature-main"><span class="feature-number">01</span><div class="speed-art" aria-hidden="true"><span></span><span></span><span></span><b>↗</b></div><h3>自动跳过，无感发生。</h3><p>识别已支持站点的外链中转地址，自动前往目标页面。少一次「继续访问」，多一点专注。</p><span class="feature-tag">安装即用</span></article>
+        <article class="feature"><span class="feature-number">02</span><div class="rule-art" aria-hidden="true"><code>target <span>→</span> 目标链接</code><div><i></i> 添加你自己的规则 <b>＋</b></div></div><h3>你的站点，你来定义。</h3><p>遇到尚未收录的网站？填写地址与目标参数，添加自定义规则，并通过浏览器同步保存。</p><a class="text-link" href="#guide">查看添加方法 <span aria-hidden="true">↗</span></a></article>
+        <article class="feature"><span class="feature-number">03</span><div class="light-art" aria-hidden="true"><span> { <b>↗</b> } </span><small>PURE JAVASCRIPT</small></div><h3>轻量，也足够透明。</h3><p>原生 JavaScript 开发，源代码公开。没有复杂的设置，明暗主题随浏览器自然切换。</p><a class="text-link" href="https://github.com/dogodo-cc/chrome-redirect-skipper" target="_blank" rel="noopener noreferrer">探索源代码 <span aria-hidden="true">↗</span></a></article>
+      </div>
+    </section>
+    <section class="supported section" id="sites"><div class="wrap"><div class="section-intro"><div><span class="section-kicker">02 / A GROWING COLLECTION</span><h2>常用站点，已经就绪。</h2></div><p>内置规则覆盖内容社区、开发者平台与文档工具。<br>站点库持续更新，也欢迎你的补充。</p></div><div class="site-toolbar"><div class="filters" role="group" aria-label="站点类别"><button class="filter active" data-filter="all" aria-pressed="true">全部站点 <span id="site-total">30</span></button><button class="filter" data-filter="community" aria-pressed="false">内容社区</button><button class="filter" data-filter="developer" aria-pressed="false">开发者平台</button><button class="filter" data-filter="other" aria-pressed="false">更多工具</button></div><label class="search"><span aria-hidden="true">⌕</span><input id="site-search" type="search" placeholder="搜索站点或域名" aria-label="搜索支持站点"></label></div><div class="site-grid" id="site-grid"></div><p class="empty-state" id="empty-state" hidden>没有找到匹配的站点。你可以添加自定义规则，或向项目反馈。</p><div class="site-bottom"><span id="site-count" aria-live="polite"></span><button id="show-sites" class="text-link">展开全部站点 <span aria-hidden="true">↓</span></button><a href="https://github.com/dogodo-cc/chrome-redirect-skipper/issues/new" target="_blank" rel="noopener noreferrer">反馈一个新站点 ↗</a></div></div></section>
+    <section class="guide wrap section" id="guide"><div class="guide-copy"><span class="section-kicker">03 / MAKE IT YOURS</span><h2>没收录的站点？<br>加进你的跳过列表。</h2><p class="guide-description">对于把目标地址放在查询参数里的中转页，<br>你可以直接在扩展面板中添加规则。</p><ol class="steps"><li><span>01</span><div><h3>打开扩展面板</h3><p>停留在中转页，点击浏览器工具栏中的扩展图标。</p></div></li><li><span>02</span><div><h3>确认地址与目标参数</h3><p>检查当前页面地址，选择 target、url、href 等参数。</p></div></li><li><span>03</span><div><h3>保存规则，刷新页面</h3><p>点击「添加到跳过列表」，刷新页面即可应用。</p></div></li></ol></div><figure class="guide-image"><div class="image-top"><span class="status-dot"></span> 小小面板，刚刚好。</div><img src="assets/demo.png" alt="Redirect-Skipper 扩展面板截图，展示当前中转页地址、目标参数以及添加到跳过列表的按钮" width="2480" height="1664" loading="lazy"><figcaption>真实扩展界面 · 自定义规则保存在浏览器同步存储中</figcaption></figure></section>
+    <section class="faq wrap section"><div><span class="section-kicker">A FEW GOOD QUESTIONS</span><h2>你可能还想知道。</h2><a class="text-link" href="https://github.com/dogodo-cc/chrome-redirect-skipper/issues" target="_blank" rel="noopener noreferrer">还有问题？来 GitHub 聊聊 ↗</a></div><div class="faq-list"><details><summary>安装后需要做什么设置？<span>＋</span></summary><p>已支持的站点安装后即可使用。将扩展固定到工具栏，方便随时添加自己的站点规则。浏览器可能会要求你确认扩展权限。</p></details><details><summary>为什么有些中转页没有跳过？<span>＋</span></summary><p>该站点可能尚未收录，或网站改变了链接格式。你可以添加自定义规则，或在 GitHub 提交问题并附上中转链接。少数需要解析页面的站点还需要相应访问权限。</p></details><details><summary>它会读取或收集我的浏览数据吗？<span>＋</span></summary><p>扩展使用标签页权限识别中转地址，使用存储权限保存规则。部分站点需要请求页面来提取链接，并从 GitHub 获取站点规则更新。开发者在 <a href="https://chromewebstore.google.com/detail/redirect-skipper/bcjldhihfjnhgmkmdeojigknladnbcek" target="_blank" rel="noopener noreferrer">Chrome 商店</a>声明不收集或使用用户数据；具体实现可在开源仓库查看。</p></details><details><summary>能跳过所有安全提示吗？<span>＋</span></summary><p>扩展按照站点规则提取目标链接，并不保证适用于每个网站，也不会判断目标网站是否可信。请自行确认目标地址。模糊匹配是可选项，默认关闭。</p></details><details><summary>Edge 可以安装吗？<span>＋</span></summary><p>可以。Edge 使用 Chrome 商店中的扩展版本；如果浏览器提示，请先允许安装来自其他商店的扩展。Firefox 使用单独的附加组件商店入口。</p></details></div></section>
+    <section class="install wrap" id="install"><div class="install-pattern" aria-hidden="true">↗</div><span class="section-kicker">YOUR NEXT CLICK, SIMPLIFIED.</span><h2>少一次中转，<br>多一份顺畅。</h2><p>选择你的浏览器，从下一次点击开始。</p><div class="install-buttons"><a class="button" href="https://chromewebstore.google.com/detail/redirect-skipper/bcjldhihfjnhgmkmdeojigknladnbcek" target="_blank" rel="noopener noreferrer"><img src="assets/icon-chrome.png" width="22" height="22" alt="">安装至 Chrome ↗</a><a class="button button-white" href="https://chromewebstore.google.com/detail/redirect-skipper/bcjldhihfjnhgmkmdeojigknladnbcek" target="_blank" rel="noopener noreferrer"><img src="assets/icon-edge.png" width="22" height="22" alt="">安装至 Edge ↗</a><a class="button button-white" href="https://addons.mozilla.org/zh-CN/firefox/addon/redirect-skipper/" target="_blank" rel="noopener noreferrer"><img src="assets/icon-firefox.png" width="22" height="22" alt="">安装至 Firefox ↗</a></div><span class="install-note">免费使用 · MIT 开源 · Chrome / Edge / Firefox</span></section>
+  </main>
+  <footer class="footer wrap"><a class="brand" href="#"><img src="assets/logo.png" width="26" height="26" alt="">Redirect-Skipper</a><span>跳过中转，保持好奇。</span><div><a href="https://github.com/dogodo-cc/chrome-redirect-skipper" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://github.com/dogodo-cc/chrome-redirect-skipper/issues" target="_blank" rel="noopener noreferrer">问题反馈 ↗</a><a href="https://github.com/dogodo-cc/chrome-redirect-skipper/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+name: 发布到 GitPage
+
+on:
+    push:
+        branches: ['master']
+    workflow_dispatch:
+
+# 并发部署会互相打掉；cancel-in-progress: false 让已经开始的部署跑完
+concurrency:
+    group: pages
+    cancel-in-progress: false
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        # 手动触发无条件构建；push 只认 commit message 带 publish 的。
+        # workflow_dispatch 的 payload 里没有 head_commit，少了左边这半句条件永远为 false，
+        # build 被 skip 会连带把 deploy 也 skip 掉（needs 的依赖 skip 时依赖方默认也 skip）
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'publish')
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: sites/redirect-skipper-official-20261014/build
+
+    deploy:
+        needs: build
+        permissions:
+            pages: write
+            id-token: write
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4

@@ -1,0 +1,122 @@
+[
+  {
+    "title": "掘金",
+    "hostname": "link.juejin.cn"
+  },
+  {
+    "title": "少数派",
+    "hostname": "sspai.com"
+  },
+  {
+    "title": "知乎",
+    "hostname": "link.zhihu.com"
+  },
+  {
+    "title": "CSDN",
+    "hostname": "link.csdn.net"
+  },
+  {
+    "title": "简书",
+    "hostname": "www.jianshu.com"
+  },
+  {
+    "title": "Gitee",
+    "hostname": "gitee.com"
+  },
+  {
+    "title": "爱发电",
+    "hostname": "afdian.com"
+  },
+  {
+    "title": "微博",
+    "hostname": "weibo.cn"
+  },
+  {
+    "title": "YouTube",
+    "hostname": "www.youtube.com"
+  },
+  {
+    "title": "语雀",
+    "hostname": "www.yuque.com"
+  },
+  {
+    "title": "阿里云",
+    "hostname": "developer.aliyun.com"
+  },
+  {
+    "title": "豆瓣",
+    "hostname": "www.douban.com"
+  },
+  {
+    "title": "InfoQ(写作社区)",
+    "hostname": "xie.infoq.cn"
+  },
+  {
+    "title": "InfoQ",
+    "hostname": "www.infoq.cn"
+  },
+  {
+    "title": "OSChina",
+    "hostname": "www.oschina.net"
+  },
+  {
+    "title": "机核",
+    "hostname": "www.gcores.com"
+  },
+  {
+    "title": "腾讯安全中心",
+    "hostname": "urlsec.qq.com"
+  },
+  {
+    "title": "百度贴吧",
+    "hostname": "tieba.baidu.com"
+  },
+  {
+    "title": "QQ 安全中心",
+    "hostname": "c.pc.qq.com"
+  },
+  {
+    "title": "腾讯文档",
+    "hostname": "docs.qq.com"
+  },
+  {
+    "title": "腾讯云",
+    "hostname": "cloud.tencent.com"
+  },
+  {
+    "title": "金山文档",
+    "hostname": "www.kdocs.cn"
+  },
+  {
+    "title": "Google 香港",
+    "hostname": "www.google.com.hk"
+  },
+  {
+    "title": "花瓣",
+    "hostname": "huaban.com"
+  },
+  {
+    "title": "51CTO",
+    "hostname": "blog.51cto.com"
+  },
+  {
+    "title": "异次元",
+    "hostname": "www.iplaysoft.com"
+  },
+  {
+    "title": "百度安全验证",
+    "hostname": "seccaptcha.baidu.com"
+  },
+  {
+    "title": "百度贴吧(安全检查)",
+    "hostname": "jump2.bdimg.com"
+  },
+  {
+    "title": "紫忆论坛",
+    "hostname": "blog.ziyibbs.com"
+  },
+  {
+    "title": "HackV",
+    "hostname": "www.hackv.cn"
+  }
+]
