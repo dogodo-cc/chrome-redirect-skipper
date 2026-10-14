@@ -1,18 +1,19 @@
 name: Tests
 on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm test
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 24
+                  cache: npm
+            - run: npm ci
+            - run: npm run build
+            - run: npm run test

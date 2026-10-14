@@ -4,6 +4,8 @@
 
 # Redirect-Skipper
 
+<a href="https://weihai.dogodo.cc/chrome-redirect-skipper/" target="_blank">官网</a>
+
 ![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/bcjldhihfjnhgmkmdeojigknladnbcek)
 ![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/bcjldhihfjnhgmkmdeojigknladnbcek)
 ![Chrome Web Store Stars](https://img.shields.io/chrome-web-store/stars/bcjldhihfjnhgmkmdeojigknladnbcek)
