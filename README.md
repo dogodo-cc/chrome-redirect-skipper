@@ -4,7 +4,7 @@
 
 # Redirect-Skipper
 
-<a href="https://weihai.dogodo.cc/chrome-redirect-skipper/" target="_blank">官网</a>
+[官网](https://weihai.dogodo.cc/chrome-redirect-skipper/)
 
 ![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/bcjldhihfjnhgmkmdeojigknladnbcek)
 ![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/bcjldhihfjnhgmkmdeojigknladnbcek)
